@@ -49,6 +49,27 @@
   width: 100%;
 }
 
+.table-header {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #babcbe;
+  color: white;
+}
+
+.table-column {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.column-heading {
+  padding: 15px;
+  text-align: left;
+  color: black;
+}
+
 .links {
   text-decoration: none;
+  font-family: sans-serif;
 }

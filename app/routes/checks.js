@@ -12,6 +12,7 @@ export default Route.extend({
       type: 'GET',
       contentType: 'application/json'
     }).then((checks) => {
+      checks.sort((a, b) => (a.alias > b.alias) ? 1 : -1)
       controller.set('model', checks)
     }).catch((error) => {
       return error

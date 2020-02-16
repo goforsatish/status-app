@@ -1,25 +1,25 @@
 <div class="ui center aligned segment">
   {{#if model}}
     <table class="checks">
-      <thead>
-      <th onclick="testFunc()">Service</th>
-      <th>Status</th>
-      <th>Rolling Uptime for 30 days</th>
+      <thead class="table-header">
+      <th class="column-heading">Service</th>
+      <th class="column-heading">Status</th>
+      <th class="column-heading">Rolling Uptime for 30 days</th>
       <th></th>
       </thead>
       <tbody>
       {{#each model as |check|}}
-        <tr>
-          <td>
+        <tr class="table-row">
+          <td class="table-column">
             <a class="links" href='https://www.updown.io/{{check.token}}'>{{check.alias}}</a>
           </td>
           {{#if check.down}}
-            <td>Down</td>
+            <td class="table-column">Down</td>
           {{else}}
-            <td>Up</td>
+            <td class="table-column">Up</td>
           {{/if}}
-          <td>{{check.uptime}}%</td>
-          <td>{{#link-to "details" check.token}} Details {{/link-to}}</td>
+          <td class="table-column">{{check.uptime}}%</td>
+          <td class="table-column">{{#link-to "details" check.token}} Details {{/link-to}}</td>
         </tr>
       {{/each}}
       </tbody>

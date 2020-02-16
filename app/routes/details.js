@@ -7,6 +7,30 @@ export default Route.extend({
   columns: null,
   data: 'test',
 
+  gridOptions: {
+
+    columnDefs: [
+      { headerName: "Product", field: "name" },
+      { headerName: 'Units', field: 'units' },
+      { headerName: 'Sales', field: 'sales' },
+      { headerName: 'Profit', field: 'profit' }
+    ],
+
+    rowData: [
+      {
+        name: 'Chips',
+        units: '223',
+        sales: '$54,335',
+        profit: '$545,454'
+      },
+      {
+        name: 'Towels',
+        units: '965',
+        sales: '$1,900',
+        profit: '$800'
+      }]
+  },
+
   upTime: computed('test', function (uptime) {
     return uptime
   }).readOnly(),

@@ -40,3 +40,11 @@
   font-size: larger;
   font-family: sans-serif;
 }
+
+/* checks table */
+
+.checks {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}

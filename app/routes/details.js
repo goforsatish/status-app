@@ -11,14 +11,12 @@ export default Route.extend({
   data: 'test',
 
   gridOptions: {
-
     columnDefs: [
       { headerName: "Product", field: "name" },
       { headerName: 'Units', field: 'units' },
       { headerName: 'Sales', field: 'sales' },
       { headerName: 'Profit', field: 'profit' }
     ],
-
     rowData: [
       {
         name: 'Chips',

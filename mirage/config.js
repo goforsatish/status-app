@@ -3,7 +3,7 @@ import checks from './fixtures/checks'
 export default function() {
   this.namespace = '/api'
 
-  this.get('checks', function (db, request) {
+  this.get('checks', function () {
     return checks
   })
 

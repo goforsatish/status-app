@@ -14,11 +14,7 @@ export default Route.extend({
     }).then((checks) => {
       controller.set('model', checks)
     }).catch((error) => {
-      console.log(error)
+      console.error("Error while fetching checks", error)
     })
-  },
-
-  testFunc: function (){
-    const a = 1
-    }
+  }
 });

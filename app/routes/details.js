@@ -3,7 +3,10 @@ import {inject as service} from '@ember/service'
 import computed from 'ember-macro-helpers/computed'
 
 export default Route.extend({
+  // == Dependencies ==========================================================
   ajax: service('ajax'),
+
+
   columns: null,
   data: 'test',
 
@@ -60,10 +63,11 @@ export default Route.extend({
     ];
   }),*/
 
+  // == Ember Lifecycle Hooks =================================================
   setupController(controller) {
     this._super(...arguments);
     this.set('data', 'new')
-    const description = {
+    const descriptions = {
       "hs1x": "push messages/device pings",
       "m06d": "log-in system",
       "ccvy": "backend and order processing",
@@ -83,11 +87,15 @@ export default Route.extend({
         const check = checks.find(item =>
           item.token==token
         )
-        controller.set('model', check)
-        controller.set('uptime', check.uptime)
 
-        if (description[token]) {
-          controller.set('description', description[token])
+        controller.setProperties({
+          model: check,
+          uptime: check.uptime
+        })
+
+        const description = descriptions[token]
+        if (description) {
+          controller.set('description', description)
         }
 
         controller.set('columns', [

@@ -1,0 +1,29 @@
+<div class="ui center aligned segment">
+  {{#if model}}
+    <table class="checks">
+      <thead>
+      <th onclick="testFunc()">Service</th>
+      <th>Status</th>
+      <th>Rolling Uptime for 30 days</th>
+      <th></th>
+      </thead>
+      <tbody>
+      {{#each model as |check|}}
+        <tr>
+          <td>
+            <a href='https://www.updown.io/{{check.token}}'>{{check.alias}}</a>
+          </td>
+          {{#if check.down}}
+            <td>Down</td>
+          {{else}}
+            <td>Up</td>
+          {{/if}}
+
+          <td>{{check.uptime}}%</td>
+          <td>{{#link-to "details" check.token}} Details {{/link-to}}</td>
+        </tr>
+      {{/each}}
+      </tbody>
+    </table>
+  {{/if}}
+</div>

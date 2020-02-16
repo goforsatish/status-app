@@ -17,7 +17,10 @@
     "test": "ember test"
   },
   "devDependencies": {
+    "ag-grid": "^18.1.2",
+    "ag-grid-enterprise": "^19.1.4",
     "broccoli-asset-rev": "^2.7.0",
+    "ember-ag-grid": "https://github.com/supersabillon/ember-ag-grid.git",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~3.3.0",
     "ember-cli-app-version": "^3.0.0",
@@ -41,7 +44,6 @@
     "ember-maybe-import-regenerator": "^0.1.6",
     "ember-resolver": "^4.0.0",
     "ember-source": "~3.3.0",
-    "ember-table": "^2.2.3",
     "ember-welcome-page": "^3.0.0",
     "eslint-plugin-ember": "^5.0.0",
     "loader.js": "^4.2.3",
@@ -50,7 +52,5 @@
   "engines": {
     "node": "6.* || 8.* || >= 10.*"
   },
-  "dependencies": {
-    "ember-ag-grid": "^0.4.1"
-  }
+  "dependencies": {}
 }

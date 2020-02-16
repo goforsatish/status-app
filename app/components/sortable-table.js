@@ -1,14 +1,10 @@
-import Ember from 'ember';
-import layout from 'updown/templates/components/check-list'
+import Component from '@ember/component';
+import layout from 'updown/templates/components/sortable-table'
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
-  // == Lifecycle Hooks =======================================================
-  init () {
-    this._super(...arguments)
-  },
 
- sortTable(n) {
+/* sortTable(n) {
   var table;
   table = document.getElementById("table");
   var rows, i, x, y, count = 0;
@@ -66,6 +62,6 @@ export default Ember.Component.extend({
       }
     }
   }
-}
+}*/
 
 });

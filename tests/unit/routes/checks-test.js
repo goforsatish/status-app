@@ -6,6 +6,7 @@ module('Unit | Route | checks', function(hooks) {
 
   test('it exists', function(assert) {
     let route = this.owner.lookup('route:checks');
+    route.setupController({})
     assert.ok(route);
   });
 });

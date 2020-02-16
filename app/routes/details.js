@@ -1,11 +1,12 @@
 import Route from '@ember/routing/route';
 import {inject as service} from '@ember/service'
-import computed from 'ember-macro-helpers/computed'
+//import computed from 'ember-macro-helpers/computed'
 
 export default Route.extend({
   // == Dependencies ==========================================================
   ajax: service('ajax'),
 
+/*
 
   columns: null,
   data: 'test',
@@ -35,6 +36,7 @@ export default Route.extend({
   upTime: computed('test', function (uptime) {
     return uptime
   }).readOnly(),
+*/
 
 /*  columns: computed(function() {
     return [
@@ -95,31 +97,9 @@ export default Route.extend({
         if (description) {
           controller.set('description', description)
         }
-
-        controller.set('columns', [
-          { name: 'col1', valuePath: 'col1', width: 180 },
-          { name: 'col2', valuePath: 'col2', width: 180 },
-          { name: 'col3', valuePath: 'col3', width: 180 }
-        ])
-        controller.set('rows', [
-          { col1: 'A8', col2: 'B8', col3: 'C1'},
-          { col1: 'A2', col2: 'B2', col3: 'C2'},
-          { col1: 'A7', col2: 'B7', col3: 'C7'},
-          { col1: 'A4', col2: 'B4', col3: 'C4'}
-        ])
-        controller.set('sorts', [
-          {
-            valuePath: 'col1',
-            isAscending: false,
-          },
-          {
-            valuePath: 'col2',
-            isAscending: true,
-          },
-        ])
       }
     }).catch((error) => {
-      //error msg
+      return error
     })
 
   }

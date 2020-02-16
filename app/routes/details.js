@@ -5,8 +5,9 @@ import computed from 'ember-macro-helpers/computed'
 export default Route.extend({
   ajax: service('ajax'),
   columns: null,
+  data: 'test',
 
-  upTime: computed('columns', function (uptime) {
+  upTime: computed('test', function (uptime) {
     return uptime
   }).readOnly(),
 
@@ -37,7 +38,7 @@ export default Route.extend({
 
   setupController(controller) {
     this._super(...arguments);
-
+    this.set('data', 'new')
     const description = {
       "hs1x": "push messages/device pings",
       "m06d": "log-in system",

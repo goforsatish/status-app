@@ -6,18 +6,13 @@ export default Route.extend({
 
   setupController(controller) {
     this._super(...arguments);
-    this.get('store').createRecord('check', {
-      name: 'johny',
-      age: '30'
-    });
     this.get('ajax').request('api/checks?api-key=ro-pz3x1zy4ae63yhygraqe', {
       type: 'GET',
       contentType: 'application/json'
-    }).then((response) => {
-      controller.set('model', response)
-    }).catch((response) => {
+    }).then((checks) => {
+      controller.set('model', checks)
+    }).catch((error) => {
       //error msg
     })
-    controller.set('test', 'Checks');
   }
 });

@@ -1,5 +1,8 @@
 <div class="center">
 
+
+  {{upTime}}
+
   {{#if model.favicon_url}}
     <div class="icon"><img src="{{model.favicon_url}}" height="42" width="42"></div>
   {{/if}}
@@ -14,7 +17,7 @@
     <div class="down-since">Down since: {{model.down_since}}</div>
   {{/if}}
 
-  <p>{{description}}</p>
+  <div class="description">{{description}}</div>
 
 <div class="ember-table">
   {{#ember-table as |t|}}

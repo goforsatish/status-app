@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'updown',
+    modulePrefix: 'status-app',
     environment,
     rootURL: '/',
     locationType: 'auto',
@@ -23,9 +23,9 @@ module.exports = function(environment) {
     }
   };
 
-  ENV.APP['updown'] = {
+  ENV.APP['statusApp'] = {
     // Versions
-    updownV1: '/api'
+    statusAppV1: '/api'
   }
 
   if (environment === 'development') {

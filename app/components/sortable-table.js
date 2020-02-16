@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import layout from 'updown/templates/components/sortable-table'
+import layout from 'status-app/templates/components/sortable-table'
 
 export default Component.extend({
   layout,

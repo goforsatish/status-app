@@ -48,3 +48,7 @@
   border-collapse: collapse;
   width: 100%;
 }
+
+.links {
+  text-decoration: none;
+}

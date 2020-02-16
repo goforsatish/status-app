@@ -1,9 +1,9 @@
 import DS from 'ember-data';
 import ENV from '../config/environment'
 
-const config = ENV.APP['updown']
+const config = ENV.APP['statusApp']
 
-const namespaceV1 = config.updownV1
+const namespaceV1 = config.statusAppV1
 
 
 export default DS.JSONAPIAdapter.extend({

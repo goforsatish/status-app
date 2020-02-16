@@ -1,8 +1,8 @@
 {
-  "name": "updown",
+  "name": "status-app",
   "version": "0.0.0",
   "private": true,
-  "description": "Small description for updown goes here",
+  "description": "Small description for status-app goes here",
   "license": "MIT",
   "author": "",
   "directories": {

@@ -23,6 +23,11 @@ module.exports = function(environment) {
     }
   };
 
+  ENV.APP['updown'] = {
+    // Versions
+    updownV1: '/api'
+  }
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
@@ -43,8 +48,22 @@ module.exports = function(environment) {
     ENV.APP.autoboot = false;
   }
 
-  if (environment === 'production') {
-    // here you can enable a production-specific feature
+  if (environment === 'production' || environment === 'proxy-prod') {
+    ENV['ember-faker'] = {
+      enabled: true
+    }
+    ENV.contentSecurityPolicy = {
+      // default
+      'default-src': "'none'",
+      'script-src': "'self'",
+      'font-src': "'self'",
+      'connect-src': "'self'",
+      'img-src': "'self'",
+      'style-src': "'self'",
+      'media-src': "'self'",
+      // custom
+      'frame-src': "'self'"
+    }
   }
 
   return ENV;

@@ -1,0 +1,6 @@
+{
+  "name": "updown",
+  "dependencies": {
+    "tablesorter": "*"
+  }
+}

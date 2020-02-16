@@ -1,0 +1,27 @@
+<div class="center">
+
+  {{#if model.favicon_url}}
+    <div class="icon"><img src="{{model.favicon_url}}" height="42" width="42"></div>
+  {{/if}}
+
+  <div class="url">{{model.url}}</div>
+
+  {{#if uptime}}
+    <div class="uptime">{{round uptime decimals=2}}%</div>
+  {{/if}}
+
+  {{#if model.down}}
+    <div class="down-since">Down since: {{model.down_since}}</div>
+  {{/if}}
+
+  <p>{{description}}</p>
+
+<div class="ember-table">
+  {{#ember-table as |t|}}
+    {{t.head columns=columns sorts=sorts}}
+
+    {{t.body rows=rows}}
+
+  {{/ember-table}}
+</div>
+</div>

@@ -1,0 +1,30 @@
+.url {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.8em;
+  word-break: break-word;
+  color: black;
+}
+
+.center {
+  float: none;
+  text-align: center;
+  max-width: initial;
+}
+
+.icon {
+  margin: 20px auto;
+}
+
+.uptime {
+  color: #5c4;
+  font-size: 4em;
+  font-weight: 200;
+  display: block;
+  text-align: center;
+}
+
+.down-since {
+  color: #aaa;
+  margin-top: 0.5em;
+}

@@ -1,9 +1,12 @@
-import Component from '@ember/component';
+import Component from '@ember/component'
 import layout from 'status-app/templates/components/sortable-table'
 import $ from 'jquery'
 
 export default Component.extend({
   layout,
+  arrowIconClass: 'arrow-up',
+  asc: false,
+  arrowIconModifier: 'arrow-down',
 
   comparer(self, index) {
     return function(a, b) {
@@ -12,18 +15,23 @@ export default Component.extend({
     }
   },
 
-  getCellValue(row, index){ return $(row).children('td').eq(index).text() },
+  getCellValue(row, index){
+    return $(row).children('td').eq(index).text()
+  },
+
+  toggleArrowIcon () {
+    if (this.asc) {
+      this.set('asc', false)
+      this.set('arrowIconModifier', 'arrow-down')
+    } else {
+      this.set('asc', true)
+      this.set('arrowIconModifier', 'arrow-up')
+    }
+  },
 
   actions: {
-    sortTable () {
-      var table = $('#checkTable').eq(0)
-      var rows = table.find('tr:gt(0)').toArray().sort(this.comparer(this, table.index()))
-      this.asc = !this.asc
-      if (!this.asc){rows = rows.reverse()}
-      for (var i = 0; i < rows.length; i++){table.append(rows[i])}
-    },
-
-    sortUpTime (n) {
+    sortTable (n) {
+     this.toggleArrowIcon()
       var table;
       table = document.getElementById("checkTable");
       var rows, i, x, y, count = 0;
@@ -45,24 +53,51 @@ export default Component.extend({
           x = rows[i].getElementsByTagName("TD")[n];
           y = rows[i + 1].getElementsByTagName("TD")[n];
 
+          var val = x.innerHTML.toLowerCase().includes('href')
+          var value_x
+          var value_y
           // Check the direction of order
           if (direction == "ascending") {
+            if (val) {
+              value_x = x.innerHTML.toLowerCase().split('>')[1].split('<')[0]
+              value_y = y.innerHTML.toLowerCase().split('>')[1].split('<')[0]
 
-            // Check if 2 rows need to be switched
-            if (parseFloat(x.innerHTML.toLowerCase()) > parseFloat(y.innerHTML.toLowerCase()))
-            {
-              // If yes, mark Switch as needed and break loop
-              Switch = true;
-              break;
+              // Check if 2 rows need to be switched
+              if (value_x > value_y)
+              {
+                // If yes, mark Switch as needed and break loop
+                Switch = true;
+                break;
+              }
+            } else {
+              // Check if 2 rows need to be switched
+              if (parseFloat(x.innerHTML.toLowerCase()) > parseFloat(y.innerHTML.toLowerCase()))
+              {
+                // If yes, mark Switch as needed and break loop
+                Switch = true;
+                break;
+              }
             }
           } else if (direction == "descending") {
+            if (val) {
+              value_x = x.innerHTML.toLowerCase().split('>')[1].split('<')[0]
+              value_y = y.innerHTML.toLowerCase().split('>')[1].split('<')[0]
 
-            // Check direction
-            if (parseFloat(x.innerHTML.toLowerCase()) < parseFloat(y.innerHTML.toLowerCase()))
-            {
-              // If yes, mark Switch as needed and break loop
-              Switch = true;
-              break;
+              // Check if 2 rows need to be switched
+              if (value_x < value_y)
+              {
+                // If yes, mark Switch as needed and break loop
+                Switch = true;
+                break;
+              }
+            } else {
+              // Check direction
+              if (parseFloat(x.innerHTML.toLowerCase()) < parseFloat(y.innerHTML.toLowerCase()))
+              {
+                // If yes, mark Switch as needed and break loop
+                Switch = true;
+                break;
+              }
             }
           }
         }

@@ -70,7 +70,35 @@
   border: 1px solid #ddd;
 }
 
+.sortable-column-heading {
+  display: flex;
+  padding: 20px;
+  text-align: left;
+  color: black;
+  border: 1px solid #ddd;
+}
+
 .links {
   text-decoration: none;
   font-family: sans-serif;
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid black;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid black;
+  margin-top: 5px;
+  margin-left: 10px;
 }

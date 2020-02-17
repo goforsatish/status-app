@@ -2,9 +2,9 @@
   {{#if model}}
     <table class="checks" id="checkTable">
       <tr class="table-header">
-        <th class="column-heading" role="button" {{action "sortTable"}} on="click">Service</th>
+        <th class="sortable-column-heading" role="button" {{action "sortTable" 0}} on="click"> Service <div class="{{arrowIconModifier}}"></div></th>
         <th class="column-heading">Status</th>
-        <th class="column-heading" role="button" {{action "sortUpTime" 2}} on="click">Rolling Uptime for 30 days</th>
+        <th class="sortable-column-heading" role="button" {{action "sortTable" 2}} on="click">Rolling Uptime for 30 days <div class="{{arrowIconModifier}}"></div></th>
         <th class="column-heading"></th>
       </tr>
       <tbody>

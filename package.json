@@ -17,10 +17,8 @@
     "test": "ember test"
   },
   "devDependencies": {
-    "ag-grid": "^18.1.2",
-    "ag-grid-enterprise": "^19.1.4",
     "broccoli-asset-rev": "^2.7.0",
-    "ember-ag-grid": "https://github.com/supersabillon/ember-ag-grid.git",
+    "ember-ag-grid": "git+https://github.com/supersabillon/ember-ag-grid.git",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~3.3.0",
     "ember-cli-app-version": "^3.0.0",

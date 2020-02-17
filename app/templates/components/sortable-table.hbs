@@ -1,12 +1,12 @@
 <div class="ui center aligned segment">
   {{#if model}}
-    <table class="checks">
-      <thead class="table-header">
-      <th class="column-heading">Service</th>
-      <th class="column-heading">Status</th>
-      <th class="column-heading">Rolling Uptime for 30 days</th>
-      <th></th>
-      </thead>
+    <table class="checks" id="checkTable">
+      <tr class="table-header">
+        <th class="column-heading" role="button" {{action "sortTable"}} on="click">Service</th>
+        <th class="column-heading">Status</th>
+        <th class="column-heading">Rolling Uptime for 30 days</th>
+        <th class="column-heading"></th>
+      </tr>
       <tbody>
       {{#each model as |check|}}
         <tr class="table-row">

@@ -1,23 +1,22 @@
 import Component from '@ember/component'
 import layout from 'status-app/templates/components/sortable-table'
-import $ from 'jquery'
 
 export default Component.extend({
-  layout,
-  arrowIconClass: 'arrow-up',
-  asc: false,
-  arrowIconModifier: 'arrow-down',
 
-  comparer(self, index) {
-    return function(a, b) {
-      var valA = self.getCellValue(a, index), valB = self.getCellValue(b, index)
-      return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.toString().localeCompare(valB)
+  // == Keyword Properties ====================================================
+
+  layout,
+
+  // == Properties =============================================================
+
+  getDefaultProps () {
+    return {
+      arrowIconModifier: 'arrow-down',
+      asc: false
     }
   },
 
-  getCellValue(row, index){
-    return $(row).children('td').eq(index).text()
-  },
+  // == Functions =============================================================
 
   toggleArrowIcon () {
     if (this.asc) {
@@ -28,6 +27,8 @@ export default Component.extend({
       this.set('arrowIconModifier', 'arrow-up')
     }
   },
+
+  // == Actions ===============================================================
 
   actions: {
     sortTable (n) {
@@ -47,7 +48,7 @@ export default Component.extend({
 
         //Loop to go through all rows
         for (i = 1; i < (rows.length - 1); i++) {
-          var Switch = false;
+          var isSwitch = false;
 
           // Fetch 2 elements that need to be compared
           x = rows[i].getElementsByTagName("TD")[n];
@@ -65,16 +66,16 @@ export default Component.extend({
               // Check if 2 rows need to be switched
               if (value_x > value_y)
               {
-                // If yes, mark Switch as needed and break loop
-                Switch = true;
+                // If yes, mark isSwitch as needed and break loop
+                isSwitch = true;
                 break;
               }
             } else {
               // Check if 2 rows need to be switched
               if (parseFloat(x.innerHTML.toLowerCase()) > parseFloat(y.innerHTML.toLowerCase()))
               {
-                // If yes, mark Switch as needed and break loop
-                Switch = true;
+                // If yes, mark isSwitch as needed and break loop
+                isSwitch = true;
                 break;
               }
             }
@@ -86,27 +87,27 @@ export default Component.extend({
               // Check if 2 rows need to be switched
               if (value_x < value_y)
               {
-                // If yes, mark Switch as needed and break loop
-                Switch = true;
+                // If yes, mark isSwitch as needed and break loop
+                isSwitch = true;
                 break;
               }
             } else {
               // Check direction
               if (parseFloat(x.innerHTML.toLowerCase()) < parseFloat(y.innerHTML.toLowerCase()))
               {
-                // If yes, mark Switch as needed and break loop
-                Switch = true;
+                // If yes, mark isSwitch as needed and break loop
+                isSwitch = true;
                 break;
               }
             }
           }
         }
-        if (Switch) {
-          // Function to switch rows and mark switch as completed
+        if (isSwitch) {
+          // Function to isSwitch rows and mark isSwitch as completed
           rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
           switching = true;
 
-          // Increase count for each switch
+          // Increase count for each isSwitch
           count++;
         } else {
           // Run while loop again for descending order

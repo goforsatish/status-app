@@ -19,7 +19,7 @@ export default Route.extend({
       "huth": "image processing",
       "evzk": "background jobs"
     }
-
+    // fetch checks from server
     this.get('ajax').request('api/checks?api-key=ro-pz3x1zy4ae63yhygraqe', {
       type: 'GET',
       contentType: 'application/json'
@@ -43,8 +43,8 @@ export default Route.extend({
           controller.set('description', description)
         }
       }
-    }).catch((error) => {
-      return error
+    }).catch((e) => {
+      return e
     })
   }
 });

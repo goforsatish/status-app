@@ -1,5 +1,6 @@
 import Route from '@ember/routing/route';
 import {inject as service} from '@ember/service'
+import {DESCRIPTIONS} from 'status-app/constants/details'
 
 export default Route.extend({
   // == Dependencies ==========================================================
@@ -8,17 +9,7 @@ export default Route.extend({
   // == Ember Lifecycle Hooks =================================================
   setupController(controller) {
     this._super(...arguments);
-    this.set('data', 'new')
-    const descriptions = {
-      "hs1x": "push messages/device pings",
-      "m06d": "log-in system",
-      "ccvy": "backend and order processing",
-      "fgbi": "workflows",
-      "c1xk": "Statistics, weather, and error reporting",
-      "kud4": "on-boarding tool",
-      "huth": "image processing",
-      "evzk": "background jobs"
-    }
+
     // fetch checks from server
     this.get('ajax').request('api/checks?api-key=ro-pz3x1zy4ae63yhygraqe', {
       type: 'GET',
@@ -37,7 +28,7 @@ export default Route.extend({
           uptime: check.uptime
         })
 
-        const description = descriptions[token]
+        const description = DESCRIPTIONS[token]
 
         if (description) {
           controller.set('description', description)

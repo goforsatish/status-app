@@ -1,5 +1,5 @@
 <div class="ui center aligned segment">
-  {{#if model}}
+  {{#if tableData}}
     <table class="checks" id="checkTable">
       <tr class="table-header">
         <th class="sortable-column-heading" role="button" {{action "sortTable" 0}} on="click"> Service <div class="{{arrowIconModifier}}"></div></th>
@@ -8,7 +8,7 @@
         <th class="column-heading"></th>
       </tr>
       <tbody>
-      {{#each model as |check|}}
+      {{#each tableData as |check|}}
         <tr class="table-row">
           <td class="table-column">
             <a class="links" href='https://www.updown.io/{{check.token}}'>{{check.alias}}</a>

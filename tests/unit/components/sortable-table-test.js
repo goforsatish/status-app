@@ -6,6 +6,7 @@ module('Unit | Component | sortable-table', function(hooks) {
 
   test('it exists', function(assert) {
     let component = this.owner.lookup('component:sortable-table');
+    component.toggleArrowIcon()
     assert.ok(component);
   });
 });

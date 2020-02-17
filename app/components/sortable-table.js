@@ -1,5 +1,6 @@
 import Component from '@ember/component'
 import layout from 'status-app/templates/components/sortable-table'
+import {CONSTANTS} from 'status-app/constants/sortable-table'
 
 export default Component.extend({
 
@@ -11,7 +12,7 @@ export default Component.extend({
 
   getDefaultProps () {
     return {
-      arrowIconModifier: 'arrow-down',
+      arrowIconModifier: CONSTANTS.ARROW_DOWN,
       asc: false
     }
   },
@@ -21,10 +22,10 @@ export default Component.extend({
   toggleArrowIcon () {
     if (this.asc) {
       this.set('asc', false)
-      this.set('arrowIconModifier', 'arrow-down')
+      this.set('arrowIconModifier', CONSTANTS.ARROW_DOWN)
     } else {
       this.set('asc', true)
-      this.set('arrowIconModifier', 'arrow-up')
+      this.set('arrowIconModifier', CONSTANTS.ARROW_UP)
     }
   },
 
@@ -58,7 +59,7 @@ export default Component.extend({
           var value_x
           var value_y
           // Check the direction of order
-          if (direction == "ascending") {
+          if (direction == CONSTANTS.ASC) {
             if (val) {
               value_x = x.innerHTML.toLowerCase().split('>')[1].split('<')[0]
               value_y = y.innerHTML.toLowerCase().split('>')[1].split('<')[0]
@@ -79,7 +80,7 @@ export default Component.extend({
                 break;
               }
             }
-          } else if (direction == "descending") {
+          } else if (direction == CONSTANTS.DSC) {
             if (val) {
               value_x = x.innerHTML.toLowerCase().split('>')[1].split('<')[0]
               value_y = y.innerHTML.toLowerCase().split('>')[1].split('<')[0]
@@ -111,8 +112,8 @@ export default Component.extend({
           count++;
         } else {
           // Run while loop again for descending order
-          if (count == 0 && direction == "ascending") {
-            direction = "descending";
+          if (count == 0 && direction == CONSTANTS.ASC) {
+            direction = CONSTANTS.DSC;
             switching = true;
           }
         }

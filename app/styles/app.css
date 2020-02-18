@@ -2,6 +2,7 @@
   display: inline-block;
   vertical-align: middle;
   font-size: 1.8em;
+  font-family: -apple-system, BlinkMacSystemFont, "Source Sans Pro", Segoe UI, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   word-break: break-word;
   color: black;
 }
@@ -24,13 +25,14 @@
   font-weight: 200;
   display: block;
   text-align: center;
-  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Source Sans Pro", Segoe UI, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 }
 
 .down-since {
   padding-top: 10px;
   color: #aaa;
   margin-top: 0.5em;
+  font-family: -apple-system, BlinkMacSystemFont, "Source Sans Pro", Segoe UI, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 }
 
 .description {
@@ -38,7 +40,7 @@
   display: inline-block;
   text-align: left;
   font-size: larger;
-  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Source Sans Pro", Segoe UI, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 }
 
 /* checks table */
@@ -65,6 +67,8 @@
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
+  font-family: -apple-system, BlinkMacSystemFont, "Source Sans Pro", Segoe UI, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+
 }
 
 .column-heading {
@@ -72,6 +76,7 @@
   text-align: left;
   color: black;
   border: 1px solid #ddd;
+  font-family: -apple-system, BlinkMacSystemFont, "Source Sans Pro", Segoe UI, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 }
 
 .sortable-column-heading {
@@ -80,6 +85,7 @@
   text-align: left;
   color: black;
   border: 1px solid #ddd;
+  font-family: -apple-system, BlinkMacSystemFont, "Source Sans Pro", Segoe UI, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 }
 
 .links {

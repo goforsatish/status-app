@@ -4,7 +4,7 @@ export default [
     "url": "tcp://52.58.226.151:5672",
     "alias": "Rabbit-lb",
     "last_status": null,
-    "uptime": 99.867,
+    "uptime": 99.998,
     "down": false,
     "down_since": null,
     "error": null,

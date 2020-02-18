@@ -1,16 +1,16 @@
 <div class="center">
-  {{#if model.favicon_url}}
-    <div class="icon"><img src="{{model.favicon_url}}" height="42" width="42"></div>
+  {{#if check.faviconurl}}
+    <div class="icon"><img src="{{check.faviconurl}}" height="42" width="42"></div>
   {{/if}}
 
-  <div class="url">{{model.url}}</div>
+  <div class="url">{{check.url}}</div>
 
   {{#if uptime}}
     <div class="uptime">{{round uptime decimals=2}}%</div>
   {{/if}}
 
-  {{#if model.down}}
-    <div class="down-since">Down since: {{model.down_since}}</div>
+  {{#if check.down}}
+    <div class="down-since">Down since: {{check.downsince}}</div>
   {{/if}}
 
   <div class="description">{{description}}</div>

@@ -1,4 +1,5 @@
 import Route from '@ember/routing/route';
+import {isNone} from '@ember/utils'
 import {inject as service} from '@ember/service'
 import {DESCRIPTIONS} from 'status-app/constants/details'
 
@@ -9,33 +10,23 @@ export default Route.extend({
   // == Ember Lifecycle Hooks =================================================
   setupController(controller) {
     this._super(...arguments);
+    let token
 
-    // fetch checks from server
-    this.get('ajax').request('api/checks?api-key=ro-pz3x1zy4ae63yhygraqe', {
-      type: 'GET',
-      contentType: 'application/json'
-    }).then((checks) => {
+    if (!isNone(controller.model)) {
+      token = controller.model.token
+      const check = this.store.peekRecord('check', token)
 
-      if (checks) {
-        const token = controller.model.token
-        const check = checks.find(item =>
-          item.token==token
-        )
+      controller.setProperties({
+        alias: check.alias,
+        uptime: check.uptime,
+        check: check
+      })
 
-        controller.setProperties({
-          model: check,
-          checks: checks,
-          uptime: check.uptime
-        })
+      const description = DESCRIPTIONS[token]
 
-        const description = DESCRIPTIONS[token]
-
-        if (description) {
-          controller.set('description', description)
-        }
+      if (description) {
+        controller.set('description', description)
       }
-    }).catch((e) => {
-      return e
-    })
+    }
   }
 });

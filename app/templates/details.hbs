@@ -5,8 +5,8 @@
 
   <div class="url">{{check.url}}</div>
 
-  {{#if uptime}}
-    <div class="uptime">{{round uptime decimals=2}}%</div>
+  {{#if check.uptime}}
+    <div class="uptime">{{round check.uptime decimals=2}}%</div>
   {{/if}}
 
   {{#if check.down}}
